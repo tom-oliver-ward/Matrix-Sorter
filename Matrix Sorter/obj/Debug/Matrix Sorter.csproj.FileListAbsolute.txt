@@ -1,0 +1,22 @@
+C:\Users\tom2s\Google Drive\PF\Orbis\software\File Organizer Matrix\Matrix Sorter\Matrix Sorter\bin\Debug\Matrix Sorter.exe.config
+C:\Users\tom2s\Google Drive\PF\Orbis\software\File Organizer Matrix\Matrix Sorter\Matrix Sorter\bin\Debug\Matrix Sorter.exe
+C:\Users\tom2s\Google Drive\PF\Orbis\software\File Organizer Matrix\Matrix Sorter\Matrix Sorter\bin\Debug\Matrix Sorter.pdb
+C:\Users\tom2s\Google Drive\PF\Orbis\software\File Organizer Matrix\Matrix Sorter\Matrix Sorter\obj\Debug\Matrix Sorter.csprojResolveAssemblyReference.cache
+C:\Users\tom2s\Google Drive\PF\Orbis\software\File Organizer Matrix\Matrix Sorter\Matrix Sorter\obj\Debug\Matrix_Sorter.Form1.resources
+C:\Users\tom2s\Google Drive\PF\Orbis\software\File Organizer Matrix\Matrix Sorter\Matrix Sorter\obj\Debug\Matrix_Sorter.Properties.Resources.resources
+C:\Users\tom2s\Google Drive\PF\Orbis\software\File Organizer Matrix\Matrix Sorter\Matrix Sorter\obj\Debug\Matrix Sorter.csproj.GenerateResource.Cache
+C:\Users\tom2s\Google Drive\PF\Orbis\software\File Organizer Matrix\Matrix Sorter\Matrix Sorter\obj\Debug\Matrix Sorter.exe
+C:\Users\tom2s\Google Drive\PF\Orbis\software\File Organizer Matrix\Matrix Sorter\Matrix Sorter\obj\Debug\Matrix Sorter.pdb
+C:\Users\tom2s\Google Drive\PF\Orbis\software\File Organizer Matrix\Matrix Sorter\Matrix Sorter\obj\Debug\Matrix Sorter.csproj.ResolveComReference.cache
+C:\Users\tom2s\Google Drive\PF\Orbis\software\File Organizer Matrix\Matrix Sorter\Matrix Sorter\bin\Debug\Excel.xml
+C:\Users\twar313\Documents\GitHub\Matrix-Sorter\Matrix Sorter\bin\Debug\Matrix Sorter.exe.config
+C:\Users\twar313\Documents\GitHub\Matrix-Sorter\Matrix Sorter\obj\Debug\Matrix Sorter.csproj.ResolveComReference.cache
+C:\Users\twar313\Documents\GitHub\Matrix-Sorter\Matrix Sorter\obj\Debug\Matrix Sorter.exe
+C:\Users\twar313\Documents\GitHub\Matrix-Sorter\Matrix Sorter\obj\Debug\Matrix Sorter.pdb
+C:\Users\twar313\Documents\GitHub\Matrix-Sorter\Matrix Sorter\obj\Debug\Matrix Sorter.csprojResolveAssemblyReference.cache
+C:\Users\twar313\Documents\GitHub\Matrix-Sorter\Matrix Sorter\obj\Debug\Matrix_Sorter.Form1.resources
+C:\Users\twar313\Documents\GitHub\Matrix-Sorter\Matrix Sorter\obj\Debug\Matrix_Sorter.Properties.Resources.resources
+C:\Users\twar313\Documents\GitHub\Matrix-Sorter\Matrix Sorter\obj\Debug\Matrix Sorter.csproj.GenerateResource.Cache
+C:\Users\twar313\Documents\GitHub\Matrix-Sorter\Matrix Sorter\bin\Debug\Matrix Sorter.exe
+C:\Users\twar313\Documents\GitHub\Matrix-Sorter\Matrix Sorter\bin\Debug\Matrix Sorter.pdb
+C:\Users\twar313\Documents\GitHub\Matrix-Sorter\Matrix Sorter\bin\Debug\Excel.xml
