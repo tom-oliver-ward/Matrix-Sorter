@@ -38,28 +38,25 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(3, 9);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox1.Location = new System.Drawing.Point(2, 6);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(182, 26);
+            this.textBox1.Size = new System.Drawing.Size(123, 20);
             this.textBox1.TabIndex = 8;
             this.textBox1.Text = "Drag Spreadsheet Here";
             // 
             // FilenumTB
             // 
-            this.FilenumTB.Location = new System.Drawing.Point(410, 314);
-            this.FilenumTB.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.FilenumTB.Location = new System.Drawing.Point(273, 204);
             this.FilenumTB.Name = "FilenumTB";
-            this.FilenumTB.Size = new System.Drawing.Size(208, 26);
+            this.FilenumTB.Size = new System.Drawing.Size(140, 20);
             this.FilenumTB.TabIndex = 7;
             // 
             // buttonConvert
             // 
-            this.buttonConvert.Location = new System.Drawing.Point(410, 268);
-            this.buttonConvert.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonConvert.Location = new System.Drawing.Point(273, 174);
             this.buttonConvert.Name = "buttonConvert";
-            this.buttonConvert.Size = new System.Drawing.Size(210, 35);
+            this.buttonConvert.Size = new System.Drawing.Size(140, 23);
             this.buttonConvert.TabIndex = 6;
             this.buttonConvert.Text = "Convert";
             this.buttonConvert.UseVisualStyleBackColor = true;
@@ -69,19 +66,16 @@
             // 
             this.SpreadSheets2Convert.AllowDrop = true;
             this.SpreadSheets2Convert.FormattingEnabled = true;
-            this.SpreadSheets2Convert.ItemHeight = 20;
-            this.SpreadSheets2Convert.Location = new System.Drawing.Point(3, 49);
-            this.SpreadSheets2Convert.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.SpreadSheets2Convert.Location = new System.Drawing.Point(2, 32);
             this.SpreadSheets2Convert.Name = "SpreadSheets2Convert";
-            this.SpreadSheets2Convert.Size = new System.Drawing.Size(1048, 144);
+            this.SpreadSheets2Convert.Size = new System.Drawing.Size(700, 95);
             this.SpreadSheets2Convert.TabIndex = 5;
             // 
             // buttonMatrixF
             // 
-            this.buttonMatrixF.Location = new System.Drawing.Point(410, 212);
-            this.buttonMatrixF.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonMatrixF.Location = new System.Drawing.Point(273, 138);
             this.buttonMatrixF.Name = "buttonMatrixF";
-            this.buttonMatrixF.Size = new System.Drawing.Size(210, 35);
+            this.buttonMatrixF.Size = new System.Drawing.Size(140, 23);
             this.buttonMatrixF.TabIndex = 9;
             this.buttonMatrixF.Text = "Select Matrix File";
             this.buttonMatrixF.UseVisualStyleBackColor = true;
@@ -94,14 +88,15 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1064, 450);
+            this.ClientSize = new System.Drawing.Size(709, 292);
             this.Controls.Add(this.buttonMatrixF);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.FilenumTB);
             this.Controls.Add(this.buttonConvert);
             this.Controls.Add(this.SpreadSheets2Convert);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -112,11 +107,11 @@
         #endregion
 
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox FilenumTB;
         private System.Windows.Forms.Button buttonConvert;
         public System.Windows.Forms.ListBox SpreadSheets2Convert;
         private System.Windows.Forms.Button buttonMatrixF;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        public System.Windows.Forms.TextBox FilenumTB;
     }
 }
 

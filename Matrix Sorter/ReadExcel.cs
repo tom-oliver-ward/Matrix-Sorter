@@ -14,42 +14,28 @@ namespace Matrix_Sorter
     {
 
         Matrix_Writer matrixWriter = new Matrix_Writer();
-        Excel_Writer excelWriter = new Excel_Writer();
+        Processing processing = new Processing();        
+        public int writeCell;
+        public string name = null;
+        public string location = null;
 
         public void readFile(int i, Form1 formObject)
         {
             Form1 form1 = formObject;
             string filename = (string)form1.SpreadSheets2Convert.Items[i];
-
-
             int j = 0;
             
             foreach (var worksheet in Workbook.Worksheets(filename))
             {
                 foreach (var row in worksheet.Rows)
                 {
-                    int k = 0;
-                    int writeCell = 0;
-                    string name=null;
-                    string location=null;
+                    writeCell = 0;
+                    int k = 0;               
+
                     foreach (var cell in row.Cells)
                     {
-                        if (j>0 && k==0 && cell==null)
-                        {
-                            writeCell = 1;
-                            excelWriter.writeConfirm(form1, j, i);                            
-                        }
-
-                        if (j > 0 && k!=0 && writeCell==1)
-                        {
-                            if (k == 1) { name = cell.Text; }
-                            if (k == 2) { location = cell.Text; }
-
-                            if (cell != null) { Matrix_Writer.writeCell(cell.Text, form1); }
-                            else { Matrix_Writer.writeCell(" ", form1); }                            
-                        }           
-
-
+                        processing.testIfDoneExcel(j, k, cell);
+                        processing.transferExcelData(j, k, cell, form1); 
                         k++;
                     }
                     //if (j>0)
@@ -57,17 +43,7 @@ namespace Matrix_Sorter
                     //    Matrix_Writer.newline(form1);
                     //}
                     j++;
-                    if (name!=null)
-                    { FindSpectra.readSpectra(name, location, form1);
-
-                        using (StreamWriter sw3 = File.AppendText(form1.file))
-                        {
-
-                            sw3.WriteLine(string.Concat(" "));
-
-                            sw3.Close();
-                        }
-                    }
+                    processing.writeSpectra(form1);                  
 
 
                 }

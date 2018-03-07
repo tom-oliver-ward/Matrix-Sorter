@@ -53,6 +53,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataTransfer.cs" />
     <Compile Include="Excel Writer.cs" />
     <Compile Include="FindSpectra.cs" />
     <Compile Include="Form1.cs">

@@ -13,7 +13,7 @@ namespace Matrix_Sorter
     public partial class Form1 : Form
         
     {
-        ReadExcel readExcel = new ReadExcel();
+        Processing processing = new Processing();
         public string file;
 
         public Form1()
@@ -43,20 +43,7 @@ namespace Matrix_Sorter
 
         private void buttonConvert_Click(object sender, EventArgs e)
         {
-            int length = System.Convert.ToInt32(System.Convert.ToDouble(SpreadSheets2Convert.Items.Count.ToString()));
-          
-            Application.DoEvents();
-            for (int i = 0; i < length; i++)
-            {
-                FilenumTB.Text = "Processing file " + (i + 1) + " of " + length;
-                Application.DoEvents();
-                readExcel.readFile(i,this);
-
-
-            }
-            MessageBoxButtons buttons = MessageBoxButtons.OK;
-            DialogResult result;
-            result = MessageBox.Show("Complete", "", buttons);
+            processing.excelLoop(this);            
         }
 
         private void buttonMatrixF_Click(object sender, EventArgs e)
