@@ -11,10 +11,10 @@ namespace Matrix_Sorter
     {
 
 
-        internal static void readWriteSpectra(string name, string location, Form1 formObject)
+        internal static void readWriteSpectra(string location, Form1 formObject)
         {
             Form1 form1 = formObject;
-            string input = File.ReadAllText(string.Concat(location,"\\", name,".txt"));
+            string input = File.ReadAllText(string.Concat(location,".txt"));
             int pos=0;            
             int stop;            
             int a = 0;                 

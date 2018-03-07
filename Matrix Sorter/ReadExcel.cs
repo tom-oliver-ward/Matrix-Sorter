@@ -12,9 +12,10 @@ namespace Matrix_Sorter
 {
     class ReadExcel
     {
-
+        DataTransfer dataTransfer = new DataTransfer();
         Matrix_Writer matrixWriter = new Matrix_Writer();
-        Processing processing = new Processing();        
+        
+             
         public int writeCell;
         public string name = null;
         public string location = null;
@@ -34,16 +35,12 @@ namespace Matrix_Sorter
 
                     foreach (var cell in row.Cells)
                     {
-                        processing.testIfDoneExcel(j, k, cell);
-                        processing.transferExcelData(j, k, cell, form1); 
+                        writeCell=dataTransfer.testIfDoneExcel(j, k, cell, writeCell);
+                        location = dataTransfer.transferExcelData(j, k, i, cell, form1, writeCell, name, location);
                         k++;
-                    }
-                    //if (j>0)
-                    //{
-                    //    Matrix_Writer.newline(form1);
-                    //}
+                    }                    
+                    dataTransfer.writeSpectra(form1, name, location);
                     j++;
-                    processing.writeSpectra(form1);                  
 
 
                 }
