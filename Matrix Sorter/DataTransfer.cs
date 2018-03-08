@@ -9,6 +9,7 @@ namespace Matrix_Sorter
 {
     class DataTransfer
     {
+        public bool fileExists = false;
         internal int testIfDoneExcel(int j, int k, Excel.Cell cell,int writeCell)
         {
             
@@ -24,8 +25,8 @@ namespace Matrix_Sorter
             Form1 form1 = formObject;
             if (j > 0 && k != 0 && writeCell == 1)
             {
-                bool fileExists = false;
-                if (k == 1) 
+                
+                if (k == 1 && cell!=null) 
                 {
                     name = cell.Text;
                     location = LocationSet(form1, i, name, location);
@@ -38,11 +39,11 @@ namespace Matrix_Sorter
                     fileExists = TestIfDoneText(location);
                 }
 
-                if (cell != null && fileExists == false)
+                if (cell != null && fileExists == false && location != null)
                 {
                     Matrix_Writer.writeCell(cell.Text, form1);
                 }
-                else if (k>1)
+                else if (k>1 && location!=null)
                 {
                     Matrix_Writer.writeCell(" ", form1);
                 }
@@ -81,12 +82,12 @@ namespace Matrix_Sorter
         {
             Form1 form1 = formObject;
 
-            if (location != null)
+            if (location != null && fileExists==false)
             {
                 FindSpectra.readWriteSpectra(location, form1);
-                newline(form1);
-                name = null; location = null;
+                newline(form1);                
             }
+            
         }
 
         private void newline(Form1 formObject)
@@ -101,8 +102,12 @@ namespace Matrix_Sorter
 
         internal void createConfirmFile(string location)
         {
-            location=(string.Concat(location, "Sorted.txt"));
-            using (File.Create(location));
+            if (location!=null)
+            {
+                location=(string.Concat(location, "Sorted.txt"));
+                using (File.Create(location));
+            }
+            
         }
     }
 }

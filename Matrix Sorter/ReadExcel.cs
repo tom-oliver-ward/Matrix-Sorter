@@ -41,6 +41,9 @@ namespace Matrix_Sorter
                     }                    
                     dataTransfer.writeSpectra(form1, name, location);
                     dataTransfer.createConfirmFile(location);
+                    name = null;
+                    location = null;
+                    dataTransfer.fileExists = false;
                     j++;
 
 
