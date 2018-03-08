@@ -40,6 +40,7 @@ namespace Matrix_Sorter
                         k++;
                     }                    
                     dataTransfer.writeSpectra(form1, name, location);
+                    dataTransfer.createConfirmFile(location);
                     j++;
 
 

@@ -25,8 +25,12 @@ namespace Matrix_Sorter
             if (j > 0 && k != 0 && writeCell == 1)
             {
                 bool fileExists = false;
-                if (k == 1) { name = cell.Text; }
-                location = LocationSet(form1,i, name, location);
+                if (k == 1) 
+                {
+                    name = cell.Text;
+                    location = LocationSet(form1, i, name, location);
+                }
+                
                                
 
                 if (name != null && location != null && k==1)
@@ -34,11 +38,11 @@ namespace Matrix_Sorter
                     fileExists = TestIfDoneText(location);
                 }
 
-                if (cell != null && fileExists == true)
+                if (cell != null && fileExists == false)
                 {
                     Matrix_Writer.writeCell(cell.Text, form1);
                 }
-                else if (k>2)
+                else if (k>1)
                 {
                     Matrix_Writer.writeCell(" ", form1);
                 }
@@ -51,19 +55,19 @@ namespace Matrix_Sorter
         {
             Form1 form1 = formObject;
             location = (string)form1.SpreadSheets2Convert.Items[i];
-            int pos=0;
-            int stop;
-            List<int> intList = new List<int>();
-            stop = location.IndexOf(".xls");
-            while (pos<stop)
+            int pos=1;
+            int posStore=0;
+
+            while (pos>=1)
             {
+                posStore = pos;
                 pos = location.IndexOf("\\",pos) + 1;
-                intList.Add(pos);
+
             }
             //Find last point in intList, take all of location prior to this point
-            string val = location.Substring(pos, stop - pos);
+            location = location.Substring(0, posStore);
 
-            location = string.Concat(location, "\\Processed\\", name);
+            location = string.Concat(location, "Processed\\", name);
             return location;
         }
 
@@ -93,6 +97,12 @@ namespace Matrix_Sorter
                 sw3.WriteLine(string.Concat(" "));
                 sw3.Close();
             }
+        }
+
+        internal void createConfirmFile(string location)
+        {
+            location=(string.Concat(location, "Sorted.txt"));
+            using (File.Create(location));
         }
     }
 }
