@@ -43,7 +43,7 @@ namespace Matrix_Sorter
                 {
                     Matrix_Writer.writeCell(cell.Text, form1);
                 }
-                else if (k>1 && location!=null)
+                else if (k > 1 && location != null && fileExists == false)
                 {
                     Matrix_Writer.writeCell(" ", form1);
                 }

@@ -1,4 +1,1 @@
-# Matrix-Sorter
-Collating files into a matrix
-
-##Testing
+# Matrix Sorter
