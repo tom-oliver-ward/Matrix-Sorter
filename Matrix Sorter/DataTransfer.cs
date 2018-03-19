@@ -20,7 +20,7 @@ namespace Matrix_Sorter
             return writeCell;
         }
 
-        internal string transferExcelData(int j, int k,int i, Excel.Cell cell, Form1 formObject, int writeCell, string name, string location)
+        internal void transferExcelData(int j, int k,int i, Excel.Cell cell, Form1 formObject, int writeCell)
         {
             Form1 form1 = formObject;
             if (j > 0 && k != 0 && writeCell == 1)
@@ -28,48 +28,46 @@ namespace Matrix_Sorter
                 
                 if (k == 1 && cell!=null) 
                 {
-                    name = cell.Text;
-                    location = LocationSet(form1, i, name, location);
+                    form1.name = cell.Text;
+                    LocationSet(form1, i);
                 }
-                
-                               
 
-                if (name != null && location != null && k==1)
+
+
+                if (form1.name != null && form1.location != null && k == 1)
                 {
-                    fileExists = TestIfDoneText(location);
+                    fileExists = TestIfDoneText(form1.location);
                 }
 
-                if (cell != null && fileExists == false && location != null)
+                if (cell != null && fileExists == false && form1.location != null)
                 {
                     Matrix_Writer.writeCell(cell.Text, form1);
                 }
-                else if (k > 1 && location != null && fileExists == false)
+                else if (k > 1 && form1.location != null && fileExists == false)
                 {
                     Matrix_Writer.writeCell(" ", form1);
                 }
             }
-
-            return location;
         }
 
-        private string LocationSet(Form1 formObject, int i, string name, string location)
+        private void LocationSet(Form1 formObject, int i)
         {
             Form1 form1 = formObject;
-            location = (string)form1.SpreadSheets2Convert.Items[i];
+            form1.location = (string)form1.SpreadSheets2Convert.Items[i];
             int pos=1;
             int posStore=0;
 
             while (pos>=1)
             {
                 posStore = pos;
-                pos = location.IndexOf("\\",pos) + 1;
+                pos = form1.location.IndexOf("\\", pos) + 1;
 
             }
             //Find last point in intList, take all of location prior to this point
-            location = location.Substring(0, posStore);
+            form1.location = form1.location.Substring(0, posStore);
 
-            location = string.Concat(location, "Processed\\", name);
-            return location;
+            form1.location = string.Concat(form1.location, "Processed\\", form1.name);
+
         }
 
         private bool TestIfDoneText(string location)
@@ -78,16 +76,16 @@ namespace Matrix_Sorter
             return value;
         }
 
-        internal void writeSpectra(Form1 formObject, string name, string location)
+        internal bool writeSpectra(Form1 formObject)
         {
             Form1 form1 = formObject;
-
-            if (location != null && fileExists==false)
+            bool spectraFound = false;
+            if (form1.location != null && fileExists == false)
             {
-                FindSpectra.readWriteSpectra(location, form1);
+                spectraFound = FindSpectra.readWriteSpectra(form1.location, form1);
                 newline(form1);                
             }
-            
+            return spectraFound;            
         }
 
         private void newline(Form1 formObject)

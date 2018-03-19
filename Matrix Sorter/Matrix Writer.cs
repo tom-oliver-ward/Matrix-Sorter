@@ -14,6 +14,7 @@ namespace Matrix_Sorter
         {
             Form1 form1 = formObject;
 
+
             using (StreamWriter sw2 = File.AppendText(form1.file))
             {
                 

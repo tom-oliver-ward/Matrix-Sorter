@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Windows.Forms;
 
 
 namespace Matrix_Sorter
@@ -17,8 +18,7 @@ namespace Matrix_Sorter
         
              
         public int writeCell;
-        public string name = null;
-        public string location = null;
+        
 
         public void readFile(int i, Form1 formObject)
         {
@@ -28,34 +28,29 @@ namespace Matrix_Sorter
             
             foreach (var worksheet in Workbook.Worksheets(filename))
             {
-                foreach (var row in worksheet.Rows)
+                foreach (var row in worksheet.Rows)                
                 {
+                    form1.textBoxExcelLine.Text = "Processing line " + (j + 1) + " of " + worksheet.Rows.Length;
+                    Application.DoEvents();
+
                     writeCell = 0;
                     int k = 0;               
 
                     foreach (var cell in row.Cells)
                     {
                         writeCell=dataTransfer.testIfDoneExcel(j, k, cell, writeCell);
-                        location = dataTransfer.transferExcelData(j, k, i, cell, form1, writeCell, name, location);
+                        dataTransfer.transferExcelData(j, k, i, cell, form1, writeCell);
                         k++;
-                    }                    
-                    dataTransfer.writeSpectra(form1, name, location);
-                    dataTransfer.createConfirmFile(location);
-                    name = null;
-                    location = null;
+                    }
+                    bool spectraExists = dataTransfer.writeSpectra(form1);
+                    if (spectraExists == true) { dataTransfer.createConfirmFile(form1.location); }
+                    form1.name = null;
+                    form1.location = null;
                     dataTransfer.fileExists = false;
                     j++;
-
-
-                }
-
-                
+                }                
             }
-
         }
-
-
-
     }
 }
 

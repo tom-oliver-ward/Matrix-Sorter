@@ -11,31 +11,47 @@ namespace Matrix_Sorter
     {
 
 
-        internal static void readWriteSpectra(string location, Form1 formObject)
+        internal static bool readWriteSpectra(string location, Form1 formObject)
         {
             Form1 form1 = formObject;
-            string input = File.ReadAllText(string.Concat(location,".txt"));
-            int pos=0;            
-            int stop;            
-            int a = 0;                 
-
-            while (a==0)
+            string input = "empty";
+            bool spectraFound = true;
+            try
             {
-                pos = input.IndexOf("\t",pos) + 1;
-                stop = input.IndexOf("\r\n", pos);
-                string val = input.Substring(pos, stop - pos);
+                input = File.ReadAllText(string.Concat(location, ".txt"));
+            }
+            catch (FileNotFoundException e)
+            {
+                spectraFound = false;
+                form1.missingSpectra.Add(form1.name);
+            }
 
-                using (StreamWriter sw = File.AppendText(form1.file))
+            if (spectraFound == true)
+            {
+                int pos = 0;
+                int stop;
+                int a = 0;
+
+                while (a == 0)
                 {
-                    sw.Write(string.Concat(val, ";"));                
-                    
-                    sw.Close();
-                }
-                if (pos>input.Length-15)
-                {
-                    a = 1;
+                    pos = input.IndexOf("\t", pos) + 1;
+                    stop = input.IndexOf("\r\n", pos);
+                    string val = input.Substring(pos, stop - pos);
+
+                    using (StreamWriter sw = File.AppendText(form1.file))
+                    {
+                        sw.Write(string.Concat(val, ";"));
+
+                        sw.Close();
+                    }
+                    if (pos > input.Length - 15)
+                    {
+                        a = 1;
+                    }
                 }
             }
+            return spectraFound;
+
         }
     }
 }
