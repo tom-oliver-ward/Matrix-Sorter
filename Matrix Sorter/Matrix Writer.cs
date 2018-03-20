@@ -18,7 +18,7 @@ namespace Matrix_Sorter
             using (StreamWriter sw2 = File.AppendText(form1.file))
             {
                 
-                    sw2.Write(string.Concat(text, ";"));
+                    sw2.Write(string.Concat(text, ","));
                 
                 sw2.Close();                           
             }
